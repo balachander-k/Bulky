@@ -40,6 +40,7 @@ namespace Bulky.Controllers
             }
             _db.Catgories.Remove(obj);
             _db.SaveChanges();
+            TempData["Success"] = "Categroy Deleted Successfully";
             return RedirectToAction("Index");
         }
         public IActionResult Edit(int? id)
@@ -63,6 +64,7 @@ namespace Bulky.Controllers
             {
                 _db.Catgories.Update(obj);
                 _db.SaveChanges();
+                TempData["Success"] = "Categroy Updated Successfully";
                 return RedirectToAction("Index");
             }
             return View();
@@ -83,6 +85,7 @@ namespace Bulky.Controllers
             {
                 _db.Catgories.Add(obj);
                 _db.SaveChanges();
+                TempData["Success"] = "Categroy Created Successfully";
                 return RedirectToAction("Index");
             }
             return View();
